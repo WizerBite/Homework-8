@@ -158,18 +158,19 @@ void task4()
 
 void task5()
 {
-    int[,] arr = new int[4, 4];
+    int SIZE = 4;
+    int[,] arr = new int[SIZE, SIZE];
     bool direction = true, direction_x = true;
 
     int i1 = 0, i2 = 0, value = 1;
-    while (value <= 16)
+    while (value <= Math.Pow(SIZE,2))
     {
         switch (direction, direction_x)
         {
             case (true, true):
                 {
                     arr[i1, i2++] = value++;
-                    if ((i2 == 4) || arr[i1, i2] > 0)
+                    if ((i2 == SIZE) || arr[i1, i2] > 0)
                     {
                         direction_x = false;
                         i1++;
@@ -180,7 +181,7 @@ void task5()
             case (true, false):
                 {
                     arr[i1++, i2] = value++;
-                    if (i1 == 4 || arr[i1, i2] > 0)
+                    if (i1 == SIZE || arr[i1, i2] > 0)
                     {
                         direction = false;
                         direction_x = true;
